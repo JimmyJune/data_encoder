@@ -17,6 +17,11 @@ let model_file = path.join(input_dir, 'model.obj');
 
 console.log(recon_json, model_file);
 
+// 如果输出目录不存在就创建
+if (!fs.existsSync(output_dir)){
+    fs.mkdirSync(output_dir);
+}
+
 let output_recon_json = path.join(output_dir, 'deploy2.bin');
 let output_model_file = path.join(output_dir, 'model.model');
 

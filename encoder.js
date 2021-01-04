@@ -14,7 +14,7 @@ let input_dir = process.argv[2];
 let output_dir = process.argv[3];
     
 let recon_json = path.join(input_dir, 'deploy.json');
-let model_file = path.join(input_dir, 'model/model.obj');
+let model_file = path.join(input_dir, 'model.obj');
 
 console.log(recon_json, model_file);
 
@@ -35,7 +35,7 @@ fs.readFile(recon_json, 'utf8', function(err, data){
 });
 
 fs.readFile(model_file, 'utf8', function(err, data){
-    console.log(data);  
+    // console.log(data);
     let jm = encrypt.Encrypt(data, key);
     fs.writeFileSync(output_model_file, jm)
 });
